@@ -3,7 +3,7 @@ using MainCommander.Models;
 
 namespace MainCommander.Data
 {
-    public interface IMainCommaderRepo
+    public interface IMainCommanderRepo
     {
         IEnumerable<MainCommand> GetAll();
         MainCommand GetById(int id);

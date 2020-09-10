@@ -9,8 +9,13 @@ namespace MainCommander.Controllers
     [ApiController]
     public class MainCommandsController : ControllerBase
     {
+        private readonly IMainCommanderRepo _repo;
 
-        private readonly MockMainCommanderRepo _repo = new MockMainCommanderRepo();
+        public MainCommandsController(IMainCommanderRepo repo)
+        {
+            _repo = repo;
+        }
+        // private readonly MockMainCommanderRepo _repo = new MockMainCommanderRepo();
         [HttpGet]
         public ActionResult<IEnumerable<MainCommand>> GetAll()
         {
