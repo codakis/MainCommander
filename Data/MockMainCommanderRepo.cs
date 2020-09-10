@@ -8,7 +8,7 @@ namespace MainCommander.Data
         public IEnumerable<MainCommand> GetAll()
         {
             var commands = new List<MainCommand> {
-               new MainCommand { Id = 0, HowTo = "boil an egg", Line = "Boil water", Platform = "Kettle and kitchen" },
+               new MainCommand { Id = 0, HowTo = "Boil an egg", Line = "Boil water", Platform = "Kettle and kitchen" },
                new MainCommand { Id = 1, HowTo = "Comb hair", Line = "Comb my hair", Platform = "Just a comb" },
                new MainCommand { Id = 2, HowTo = "Shave beard", Line = "Shaving beard", Platform = "Razor and mirror" }
            };
@@ -17,7 +17,7 @@ namespace MainCommander.Data
 
         public MainCommand GetById(int id)
         {
-            return new MainCommand { Id = 0, HowTo = "boil an egg", Line = "Boil water", Platform = "Kettle and kitchen" };
+            return new MainCommand { Id = 0, HowTo = "Boil an egg", Line = "Boil water", Platform = "Kettle and kitchen" };
         }
     }
 }
