@@ -26,6 +26,9 @@ bin/
 obj/
 obj\
 TestResults/
+./vscode
+Migrations/
+Migrations\
 ###################
 # Web publish log #
 ###################
