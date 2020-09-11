@@ -88,5 +88,18 @@ namespace MainCommander.Controllers
             return NoContent();
 
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            var getModelFromRepo = _repo.GetById(id);
+            if (getModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            _repo.Delete(getModelFromRepo);
+            _repo.SaveChanges();
+            return NoContent();
+        }
     }
 }

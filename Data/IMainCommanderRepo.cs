@@ -10,6 +10,7 @@ namespace MainCommander.Data
         void CreateCommand(MainCommand cmd);
         void UpdateCommand(MainCommand cmd);
         bool SaveChanges();
+        void Delete(MainCommand cmd);
 
     }
 }

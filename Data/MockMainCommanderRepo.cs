@@ -10,6 +10,11 @@ namespace MainCommander.Data
             throw new System.NotImplementedException();
         }
 
+        public void Delete(MainCommand cmd)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<MainCommand> GetAll()
         {
             var commands = new List<MainCommand> {
@@ -26,6 +31,11 @@ namespace MainCommander.Data
         }
 
         public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool SaveChanges(MainCommand cmd)
         {
             throw new System.NotImplementedException();
         }
