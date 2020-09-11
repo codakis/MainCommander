@@ -11,7 +11,8 @@ namespace MainCommander.Profiles
             CreateMap<MainCommand, MainCommandReadDto>();
             CreateMap<MainCommandCreateDto, MainCommand>();
             CreateMap<MainCommandUpdateDto, MainCommand>();
-
+            //patching
+            CreateMap<MainCommand, MainCommandUpdateDto>();
         }
     }
 }

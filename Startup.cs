@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using Newtonsoft.Json.Serialization;
 
 namespace MainCommander
 {
@@ -30,7 +31,10 @@ namespace MainCommander
         {
             services.AddDbContext<MainCommanderContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("CommanderConnection")));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s =>
+            {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
             // services.AddScoped<IMainCommanderRepo, MockMainCommanderRepo>();
             services.AddScoped<IMainCommanderRepo, SqlCommanderRepo>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
