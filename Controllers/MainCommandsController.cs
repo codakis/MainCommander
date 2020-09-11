@@ -27,13 +27,26 @@ namespace MainCommander.Controllers
             return Ok(_mapper.Map<IEnumerable<MainCommandReadDto>>(commandItems));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetById")]
         public ActionResult<MainCommandReadDto> GetById(int id)
         {
             var commandItem = _repo.GetById(id);
             if (commandItem != null)
                 return Ok(_mapper.Map<MainCommandReadDto>(commandItem));
             return NotFound();
+        }
+
+        [HttpPost]
+        public ActionResult<MainCommandReadDto> CreateCommand(MainCommandCreateDto createDto)
+        {
+            var commandModel = _mapper.Map<MainCommand>(createDto);
+            _repo.CreateCommand(commandModel);
+            _repo.SaveChanges();
+
+            var commandReadDto = _mapper.Map<MainCommandReadDto>(commandModel);
+
+            return CreatedAtRoute(nameof(GetById), new { Id = commandReadDto.Id }, commandReadDto);
+            //return Ok(createDto);
         }
 
     }
