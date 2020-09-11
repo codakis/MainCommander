@@ -37,5 +37,10 @@ namespace MainCommander.Data
             return (_context.SaveChanges() >= 0);
 
         }
+
+        public void UpdateCommand(MainCommand cmd)
+        {
+
+        }
     }
 }

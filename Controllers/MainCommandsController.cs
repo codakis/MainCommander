@@ -49,5 +49,19 @@ namespace MainCommander.Controllers
             //return Ok(createDto);
         }
 
+        [HttpPut("{id}")]
+        public ActionResult Update(int id, MainCommandUpdateDto updateDto)
+        {
+            var getModelFromRepo = _repo.GetById(id);
+            if (getModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(updateDto, getModelFromRepo);
+            _repo.UpdateCommand(getModelFromRepo);
+            _repo.SaveChanges();
+            return NoContent();
+        }
     }
 }

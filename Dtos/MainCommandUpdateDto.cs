@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MainCommander.Dtos
 {
-    public class MainCommandCreateDto
+    public class MainCommandUpdateDto
     {
         [Required]
         [MaxLength(250)]

@@ -29,5 +29,10 @@ namespace MainCommander.Data
         {
             throw new System.NotImplementedException();
         }
+
+        public void UpdateCommand(MainCommand cmd)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

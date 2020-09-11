@@ -7,8 +7,9 @@ namespace MainCommander.Data
     {
         IEnumerable<MainCommand> GetAll();
         MainCommand GetById(int id);
-
         void CreateCommand(MainCommand cmd);
+        void UpdateCommand(MainCommand cmd);
         bool SaveChanges();
+
     }
 }

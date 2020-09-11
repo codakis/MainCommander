@@ -10,6 +10,7 @@ namespace MainCommander.Profiles
             // source to target
             CreateMap<MainCommand, MainCommandReadDto>();
             CreateMap<MainCommandCreateDto, MainCommand>();
+            CreateMap<MainCommandUpdateDto, MainCommand>();
 
         }
     }
